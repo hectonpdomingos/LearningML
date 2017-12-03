@@ -53,6 +53,14 @@ from sklearn.cross_validation import train_test_split
 X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size = 0.2, random_state = 0)
 
 
+#Feature Scaling - normalizing data
+from sklearn.preprocessing import StandardScaler
+sc_X = StandardScaler()
+X_train = sc_X.fit_transform(X_train)
+X_test = sc_X.transform(X_test)
+
+
+
 
 ###########################################33
 #R
@@ -84,6 +92,11 @@ set.seed(123)
 split = sample.split(dataset$Column, SplitRatio = 0.8)
 training_set = subset(dataset, split == TRUE)
 test_set = subset(dataset, split == FALSE)
+
+#Feature Scaling in the columns 2 and 3, if you want all columns just 
+#skip the [, 2:3] field
+training_set[, 2:3] = scale(training_set[, 2:3])
+test_set[, 2:3] = scale(test_set[, 2:3])
 
 
 
