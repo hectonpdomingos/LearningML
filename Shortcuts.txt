@@ -1,3 +1,13 @@
+#Colletions os tips and tricks froms several resources for my ML studies.
+
+#Best IDE - Anaconda
+# http://anaconda.org
+
+#python spyder
+#R studio
+
+
+
 #Python
 
 #Importing libraries and creating shortcuts for Data Preprocessing
@@ -38,6 +48,9 @@ labelEncoder_Y = LabelEncoder()
 Y = labelEncoder_Y.fit_transform(Y)
 
 
+#splitting the dataset in trainning and test
+from sklearn.cross_validation import train_test_split
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size = 0.2, random_state = 0)
 
 
 
@@ -64,5 +77,13 @@ dataset$Column = factor(dataset$Column,
 dataset$Column2 = factor(dataset$Column,
                          levels = c('values0', 'values1', 'values2', 'values3', 'values4', 'values5'),
                          labels = c(0,1,2,3,4,5))
+						 
+#Splitting the dataset in training and test
+library(caTools)
+set.seed(123)
+split = sample.split(dataset$Purchased, SplitRatio = 0.8)
+training_set = subset(dataset, split == TRUE)
+test_set = subset(dataset, split == FALSE)
+
 
 
