@@ -132,3 +132,15 @@ test_set[, 2:3] = scale(test_set[, 2:3])
 
 
 
+#Plotting the Test set
+library(ggplot2)
+ggplot()+
+  geom_point(aes(x = test_set$column, y = test_set$colum2),
+             colour = 'red') +
+  geom_line(aes(x = training_set$column, y = predict(regressor, newdata = training_set)),
+            colour = 'blue') +
+  ggtitle('YOUR TITLE') +
+  xlab('footer title')+
+  ylab('plot mean')
+
+
