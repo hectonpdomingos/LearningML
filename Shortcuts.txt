@@ -6,6 +6,10 @@
 #python spyder
 #R studio
 
+#Troubleshooting
+
+#Rccp is getting error on instalation on R studio, just go to https://cran.r-project.org/web/packages/Rcpp/index.html
+#download the Rcpp, unzip and past on R lib directory.  You can check out the path using the command .Library on Rstudio console
 
 
 #Python
